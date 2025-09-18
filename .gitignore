@@ -1,0 +1,6 @@
+.env
+venv
+__pycache__
+test.py
+test_register.py
+firebase_key.json
