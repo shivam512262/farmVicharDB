@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
 
 class ResourceBase(BaseModel):
-    farmId: str
+    userId: str # Changed from farmId
     machinery: Optional[List[str]] = []
     laborAvailability: Optional[str] = None
     fertilizerHistory: Optional[List[Dict[str, Any]]] = []
@@ -20,5 +20,6 @@ class ResourceUpdate(BaseModel):
     storageAccess: Optional[str] = None
     
 class Resource(ResourceBase):
-    id: str # Will be the same as farmId
-    class Config: from_attributes = True    
+    id: str # Will be the same as userId
+    class Config: 
+        from_attributes = True

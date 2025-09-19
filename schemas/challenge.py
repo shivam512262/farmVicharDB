@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Optional, List
 
 class ChallengeBase(BaseModel):
-    farmId: str
+    userId: str 
     pastPests: Optional[List[str]] = []
     pastDiseases: Optional[List[str]] = []
     weatherLosses: Optional[List[str]] = []
@@ -18,5 +18,6 @@ class ChallengeUpdate(BaseModel):
     marketAccess: Optional[str] = None
 
 class Challenge(ChallengeBase):
-    id: str # Will be the same as farmId
-    class Config: from_attributes = True    
+    id: str
+    class Config: 
+        from_attributes = True
