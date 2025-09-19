@@ -5,3 +5,4 @@ test.py
 test_register.py
 firebase_key.json
 my-tts-backend-9ca1e9a97fca.json
+test_tts.py
