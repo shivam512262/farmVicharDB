@@ -5,3 +5,4 @@ pydantic-settings
 firebase-admin
 python-dotenv
 bcrypt
+google-cloud-texttospeech

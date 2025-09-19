@@ -3,7 +3,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from fastapi import FastAPI
-from api import users, farms, soil_profiles, crops, resources, challenges, finance, chats, logs, alerts
+# Import the new tts router
+from api import users, farms, soil_profiles, crops, resources, challenges, finance, chats, logs, alerts, tts
 from db.firestore_client import initialize_firestore
 
 app = FastAPI(
@@ -15,7 +16,7 @@ app = FastAPI(
 def startup_event():
     initialize_firestore()
 
-# Include all 10 routers
+# Include all routers
 app.include_router(users.router)
 app.include_router(farms.router)
 app.include_router(soil_profiles.router)
@@ -27,6 +28,7 @@ app.include_router(chats.router_for_farm)
 app.include_router(chats.router_for_single_chat)
 app.include_router(logs.router)
 app.include_router(alerts.router)
+app.include_router(tts.router)
 
 @app.get("/")
 def read_root():
